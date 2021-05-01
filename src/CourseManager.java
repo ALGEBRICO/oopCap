@@ -4,7 +4,7 @@ public class CourseManager {
 	}
 	
 	public void CourseAndInstructor(Course course,Instructor instructor) {
-		System.out.println(course.courseName +" kursu" + " " + instructor.instructorName +"isimli eðitmene aittir");
+		System.out.println(course.courseName +" kursu" + " " + instructor.firstName +"isimli eðitmene aittir");
 	}
 
 }

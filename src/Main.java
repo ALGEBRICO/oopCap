@@ -2,29 +2,42 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Category category1 = new Category(1,"Tümü");
-		Category category2 = new Category(2,"Programlama");
-		
-		Category[] categories = {category1,category2};
-		
-		
-		Course course1 = new Course(1,"Yazýlým Kampý","Mokoko");
-		Course course2 = new Course(1,"Yazýlým Kampý","Mokoko");
-		Course course3 = new Course(1,"Yazýlým Kampý","Mokoko");
-
-		Course[] courses = {course1,course2,course3};
-		
+		Student user1 = new Student();
+		user1.setId(1);
+		user1.setRole("Student");
+		user1.setFirstName("Vahip");
+		user1.setLastName("Þimþek");
+		user1.setEmail("vahip@vahip.com");
+		user1.setMajor("Manager");
+		user1.setNumberofCoursesTaken(2);
+		String [] coursesTakenByUser1 = {"Java", "C"};
+		user1.setCourseNames(coursesTakenByUser1);
 	
-		Instructor instructor1 = new Instructor(1,"Engin Demiroð");
-		Instructor instructor2 = new Instructor(2,"Mustafa Murat Coþkun");
-		
-		Instructor[] instructors = {instructor1};
-		
-		CourseManager courseManager = new CourseManager();
-		courseManager.CourseAndInstructor(course3, instructor2);
-		
-		InstructorManager instructorManager = new InstructorManager();
-		instructorManager.Add(instructor2);
+	
+		Instructor user2 = new Instructor();
+		user2.setId(2);
+		user2.setRole("Instructor");
+		user2.setFirstName("Engin");
+		user2.setLastName("Demiroð");
+		user2.setEmail("engindemirog@gmail.com");
+		String [] certificates = {"Java","Python","C","C#"};
+		user2.setCertificates(certificates);
+		user2.setNumberofCoursesGiven(2);
+		String [] coursesGivenByUser2 = {"Java", "C"};
+		user2.setCourseNames(coursesGivenByUser2);
+	
+	
+	UserManager userManager = new UserManager();
+	
+	User [] users = {user1,user2};
+	
+	userManager.addMultipleUser(users);
+    
+	StudentManager studentManager = new StudentManager();
+	studentManager.coursesTakenByStudent(user1);
+	
+	InstructorManager instructorManager = new InstructorManager();
+	instructorManager.coursesGivenByInstructor(user2);
 	}
 
 }
